@@ -19,8 +19,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ inputs.version }}}
-          release_name: Release ${{ inputs.version }}}
+          tag_name: ${{ inputs.version }}
+          release_name: Release ${{ inputs.version }}
           body: |
             Contains all grafana dashboards of the ethical metrics project, to be used in monitor-service and monitor-aggregator.
           draft: false
