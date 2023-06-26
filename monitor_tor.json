@@ -1,0 +1,2575 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 2,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "DS_PROMETHEUS"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "auto",
+              "cellOptions": {
+                "type": "auto"
+              },
+              "inspect": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "CPU Load"
+              },
+              "properties": [
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "mode": "gradient",
+                    "type": "gauge"
+                  }
+                },
+                {
+                  "id": "unit",
+                  "value": "percent"
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": null
+                      },
+                      {
+                        "color": "#EAB839",
+                        "value": 40
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "max",
+                  "value": 100
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Used Memory"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "bytes"
+                },
+                {
+                  "id": "decimals",
+                  "value": 4
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Total Memory"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "bytes"
+                },
+                {
+                  "id": "decimals",
+                  "value": 4
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Memory Load"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "percent"
+                },
+                {
+                  "id": "decimals",
+                  "value": 2
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "mode": "gradient",
+                    "type": "gauge"
+                  }
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": null
+                      },
+                      {
+                        "color": "#EAB839",
+                        "value": 40
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "max",
+                  "value": 100
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Status"
+              },
+              "properties": [
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "mode": "gradient",
+                    "type": "color-background"
+                  }
+                },
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "0": {
+                          "index": 1,
+                          "text": "DOWN"
+                        },
+                        "1": {
+                          "index": 0,
+                          "text": "UP"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ]
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "red",
+                        "value": null
+                      },
+                      {
+                        "color": "green",
+                        "value": 0.5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "custom.width",
+                  "value": 61
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "email"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 217
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Used Storage Space"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "bytes"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Total Storage space"
+              },
+              "properties": [
+                {
+                  "id": "unit",
+                  "value": "bytes"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Storage space Load"
+              },
+              "properties": [
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "mode": "gradient",
+                    "type": "gauge"
+                  }
+                },
+                {
+                  "id": "max",
+                  "value": 100
+                },
+                {
+                  "id": "unit",
+                  "value": "percent"
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "instance"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 112
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "instance"
+              },
+              "properties": [
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "pattern": "(.....).*(...).onion:9090",
+                        "result": {
+                          "index": 0,
+                          "text": "$1 ... $2"
+                        }
+                      },
+                      "type": "regex"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Num Cores"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 98
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Installed Packages"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 140
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 14,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 2,
+        "options": {
+          "cellHeight": "sm",
+          "footer": {
+            "countRows": false,
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": [
+            {
+              "desc": true,
+              "displayName": "instance"
+            }
+          ]
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "min(up{instance=~\"$Instance\",service=\"\"}) by (instance,email)",
+            "format": "table",
+            "instant": true,
+            "legendFormat": "{{instance}}",
+            "range": false,
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "expr": "count(node_cpu_seconds_total{mode=\"user\",instance=~\"$Instance\"}) by (instance)",
+            "format": "table",
+            "hide": false,
+            "legendFormat": "{{instance}}",
+            "range": true,
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{mode=\"idle\",instance=~\"$Instance\"}[5m])) * 100)",
+            "format": "table",
+            "hide": false,
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "expr": "sum(container_memory_usage_bytes{image!=\"\", image=\"$Image\",instance=~\"$Instance\"}-container_memory_cache{image!=\"\", image=\"$Image\",instance=~\"$Instance\"}) by (instance)",
+            "format": "table",
+            "hide": false,
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "expr": "node_memory_MemTotal_bytes{instance=~\"$Instance\"}",
+            "format": "table",
+            "hide": false,
+            "legendFormat": "{{instance}}",
+            "range": true,
+            "refId": "E"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "expr": "(sum(node_memory_MemTotal_bytes{instance=~\"$Instance\"}) by (instance) - sum(node_memory_MemFree_bytes{instance=~\"$Instance\"}+node_memory_Buffers_bytes{instance=~\"$Instance\"}+node_memory_Cached_bytes{instance=~\"$Instance\"}) by (instance)) / sum(node_memory_MemTotal_bytes{instance=~\"$Instance\"}) by (instance)* 100",
+            "format": "table",
+            "hide": false,
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "F"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "expr": "sum(container_fs_usage_bytes{device=~\"/dev/.*\",instance=~\"$Instance\"}) by (instance)",
+            "format": "table",
+            "hide": false,
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "G"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "expr": "node_filesystem_size_bytes{mountpoint=\"/\",instance=~\"$Instance\"}",
+            "format": "table",
+            "hide": false,
+            "interval": "",
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "H"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "expr": "(node_filesystem_size_bytes{mountpoint=\"/\",instance=~\"$Instance\"} - node_filesystem_free_bytes{mountpoint=\"/\",instance=~\"$Instance\"}) / node_filesystem_size_bytes{mountpoint=\"/\",instance=~\"$Instance\"}  * 100",
+            "format": "table",
+            "hide": false,
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "I"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "expr": "count(container_last_seen{container_label_dappnode_dnp_dnpName!=\"\",image=~\"$image\",instance=~\"$Instance\"}) by (instance)",
+            "format": "table",
+            "hide": false,
+            "legendFormat": "{{instance}}",
+            "range": true,
+            "refId": "J"
+          }
+        ],
+        "title": "General Status",
+        "transformations": [
+          {
+            "id": "joinByField",
+            "options": {
+              "byField": "instance",
+              "mode": "outer"
+            }
+          },
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "Time 1": true,
+                "Time 10": true,
+                "Time 2": true,
+                "Time 3": true,
+                "Time 4": true,
+                "Time 5": true,
+                "Time 6": true,
+                "Time 7": true,
+                "Time 8": true,
+                "Time 9": true,
+                "Value #E": false,
+                "Value #F": false,
+                "Value #G": false,
+                "__name__": true,
+                "__name__ 2": true,
+                "device": true,
+                "device 2": true,
+                "email 2": true,
+                "email 3": true,
+                "email 4": true,
+                "exported_instance": true,
+                "exported_instance 2": true,
+                "exported_instance 3": true,
+                "exported_job": true,
+                "exported_job 2": true,
+                "exported_job 3": true,
+                "fstype": true,
+                "fstype 2": true,
+                "job": true,
+                "job 2": true,
+                "job 3": true,
+                "mountpoint": true,
+                "mountpoint 2": true,
+                "primary": true,
+                "primary 2": true,
+                "primary 3": true
+              },
+              "indexByName": {
+                "Time 1": 1,
+                "Time 10": 44,
+                "Time 2": 4,
+                "Time 3": 7,
+                "Time 4": 9,
+                "Time 5": 11,
+                "Time 6": 19,
+                "Time 7": 21,
+                "Time 8": 23,
+                "Time 9": 34,
+                "Value #A": 3,
+                "Value #B": 5,
+                "Value #C": 8,
+                "Value #D": 10,
+                "Value #E": 18,
+                "Value #F": 20,
+                "Value #G": 22,
+                "Value #H": 33,
+                "Value #I": 43,
+                "Value #J": 6,
+                "__name__ 1": 12,
+                "__name__ 2": 24,
+                "device 1": 25,
+                "device 2": 35,
+                "email 1": 2,
+                "email 2": 13,
+                "email 3": 26,
+                "email 4": 36,
+                "exported_instance 1": 14,
+                "exported_instance 2": 27,
+                "exported_instance 3": 37,
+                "exported_job 1": 15,
+                "exported_job 2": 28,
+                "exported_job 3": 38,
+                "fstype 1": 29,
+                "fstype 2": 39,
+                "instance": 0,
+                "job 1": 16,
+                "job 2": 30,
+                "job 3": 40,
+                "mountpoint 1": 31,
+                "mountpoint 2": 41,
+                "primary 1": 17,
+                "primary 2": 32,
+                "primary 3": 42
+              },
+              "renameByName": {
+                "Value #A": "Status",
+                "Value #B": "Num Cores",
+                "Value #C": "CPU Load",
+                "Value #D": "Used Memory",
+                "Value #E": "Total Memory",
+                "Value #F": "Memory Load",
+                "Value #G": "Used Storage Space",
+                "Value #H": "Total Storage space",
+                "Value #I": "Storage space Load",
+                "Value #J": "Installed Packages"
+              }
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "DS_PROMETHEUS"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "auto",
+              "cellOptions": {
+                "type": "auto"
+              },
+              "inspect": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "% of Installations"
+              },
+              "properties": [
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "mode": "gradient",
+                    "type": "gauge"
+                  }
+                },
+                {
+                  "id": "unit",
+                  "value": "percentunit"
+                },
+                {
+                  "id": "max",
+                  "value": 1
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "red",
+                        "value": null
+                      },
+                      {
+                        "color": "#EAB839",
+                        "value": 0.4
+                      },
+                      {
+                        "color": "green",
+                        "value": 0.8
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "image"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 212
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 9,
+          "x": 0,
+          "y": 14
+        },
+        "id": 4,
+        "options": {
+          "cellHeight": "sm",
+          "footer": {
+            "countRows": false,
+            "enablePagination": false,
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": [
+            {
+              "desc": true,
+              "displayName": "% of Installations"
+            }
+          ]
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "count(container_last_seen{container_label_dappnode_dnp_dnpName!=\"\", instance=~\"$Instance\"}) by (image)",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "legendFormat": "{{image}} - {{instance}}",
+            "range": false,
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "count(container_last_seen{container_label_dappnode_dnp_dnpName!=\"\", instance=~\"$Instance\"}) by (image) / scalar(count(up{service=\"\",exported_instance=\"\"}))",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "legendFormat": "{{image}} - {{instance}}",
+            "range": false,
+            "refId": "B"
+          }
+        ],
+        "title": "Packages Installed",
+        "transformations": [
+          {
+            "id": "joinByField",
+            "options": {
+              "byField": "image",
+              "mode": "outer"
+            }
+          },
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "Time 1": true,
+                "Time 2": true
+              },
+              "indexByName": {},
+              "renameByName": {
+                "Value #A": "Installed Packages",
+                "Value #B": "% of Installations"
+              }
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "DS_PROMETHEUS"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "auto",
+              "cellOptions": {
+                "type": "auto"
+              },
+              "inspect": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "instance"
+              },
+              "properties": [
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "pattern": "(.....).*(...).onion:9090",
+                        "result": {
+                          "index": 1,
+                          "text": "$1 ... $2"
+                        }
+                      },
+                      "type": "regex"
+                    }
+                  ]
+                },
+                {
+                  "id": "custom.width",
+                  "value": 135
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "image"
+              },
+              "properties": [
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "": {
+                          "index": 0,
+                          "text": "$1:$3"
+                        }
+                      },
+                      "type": "value"
+                    },
+                    {
+                      "options": {
+                        "pattern": "(.*).(dnp|public).dappnode.eth:(.*)",
+                        "result": {
+                          "index": 1,
+                          "text": "$1:$3"
+                        }
+                      },
+                      "type": "regex"
+                    }
+                  ]
+                },
+                {
+                  "id": "custom.width",
+                  "value": 152
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 7,
+          "x": 9,
+          "y": 14
+        },
+        "id": 8,
+        "options": {
+          "cellHeight": "sm",
+          "footer": {
+            "countRows": false,
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": [
+            {
+              "desc": false,
+              "displayName": "image"
+            }
+          ]
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "count by (instance,image)(count_over_time(container_last_seen{container_label_dappnode_dnp_dnpName!=\"\", instance=~\"$Instance\"}[15m])) - 1 > 1",
+            "format": "table",
+            "instant": true,
+            "legendFormat": "{{image}} - {{instance}}",
+            "range": false,
+            "refId": "A"
+          }
+        ],
+        "title": "Packages Restarted last 15min",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "Time": true
+              },
+              "indexByName": {},
+              "renameByName": {
+                "Value": "Num. Restarts"
+              }
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "DS_PROMETHEUS"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "auto",
+              "cellOptions": {
+                "type": "auto"
+              },
+              "inspect": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "instance"
+              },
+              "properties": [
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "pattern": "(.....).*(...).onion:9090",
+                        "result": {
+                          "index": 0,
+                          "text": "$1 ... $2"
+                        }
+                      },
+                      "type": "regex"
+                    }
+                  ]
+                },
+                {
+                  "id": "custom.width",
+                  "value": 114
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "dockerVersion"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 118
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "email"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 154
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 8,
+          "x": 16,
+          "y": 14
+        },
+        "id": 6,
+        "options": {
+          "cellHeight": "sm",
+          "footer": {
+            "countRows": false,
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": [
+            {
+              "desc": true,
+              "displayName": "kernelVersion"
+            }
+          ]
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "cadvisor_version_info{instance=~\"$Instance\"}",
+            "format": "table",
+            "instant": true,
+            "legendFormat": "__auto",
+            "range": false,
+            "refId": "A"
+          }
+        ],
+        "title": "System Info",
+        "transformations": [
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "Time": true,
+                "Value": true,
+                "__name__": true,
+                "cadvisorRevision": true,
+                "cadvisorVersion": true,
+                "exported_instance": true,
+                "exported_job": true,
+                "job": true,
+                "osVersion": true,
+                "primary": true
+              },
+              "indexByName": {
+                "Time": 2,
+                "Value": 13,
+                "__name__": 3,
+                "cadvisorRevision": 4,
+                "cadvisorVersion": 5,
+                "dockerVersion": 6,
+                "email": 1,
+                "exported_instance": 7,
+                "exported_job": 8,
+                "instance": 0,
+                "job": 9,
+                "kernelVersion": 10,
+                "osVersion": 11,
+                "primary": 12
+              },
+              "renameByName": {}
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "DS_PROMETHEUS"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "custom": {
+              "align": "auto",
+              "cellOptions": {
+                "type": "auto"
+              },
+              "inspect": false
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Auto Updates System Packages"
+              },
+              "properties": [
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "type": "auto"
+                  }
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "mode": "basic",
+                    "type": "color-background"
+                  }
+                },
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "0": {
+                          "index": 1,
+                          "text": "Disabled"
+                        },
+                        "1": {
+                          "index": 0,
+                          "text": "Enabled"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ]
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green"
+                      },
+                      {
+                        "color": "red",
+                        "value": 0
+                      },
+                      {
+                        "color": "green",
+                        "value": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Auto Updates User Packages"
+              },
+              "properties": [
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "0": {
+                          "index": 1,
+                          "text": "Disabled"
+                        },
+                        "1": {
+                          "index": 0,
+                          "text": "Enabled"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ]
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green"
+                      },
+                      {
+                        "color": "red",
+                        "value": 0
+                      },
+                      {
+                        "color": "green",
+                        "value": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "mode": "basic",
+                    "type": "color-background"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Ethereum Client"
+              },
+              "properties": [
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green"
+                      },
+                      {
+                        "color": "orange",
+                        "value": 0
+                      },
+                      {
+                        "color": "blue",
+                        "value": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "mode": "basic",
+                    "type": "color-background"
+                  }
+                },
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "0": {
+                          "index": 1,
+                          "text": "Remote"
+                        },
+                        "1": {
+                          "index": 0,
+                          "text": "Local"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Ethereum Fallback"
+              },
+              "properties": [
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green"
+                      },
+                      {
+                        "color": "red",
+                        "value": 0
+                      },
+                      {
+                        "color": "green",
+                        "value": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "mode": "gradient",
+                    "type": "color-background"
+                  }
+                },
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "0": {
+                          "index": 1,
+                          "text": "Disabled"
+                        },
+                        "1": {
+                          "index": 0,
+                          "text": "Enabled"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "IPFS Client"
+              },
+              "properties": [
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "blue"
+                      },
+                      {
+                        "color": "orange",
+                        "value": 0
+                      },
+                      {
+                        "color": "blue",
+                        "value": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "0": {
+                          "index": 1,
+                          "text": "Remote"
+                        },
+                        "1": {
+                          "index": 0,
+                          "text": "Local"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ]
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "mode": "gradient",
+                    "type": "color-background"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Execution Client Mainnet"
+              },
+              "properties": [
+                {
+                  "id": "custom.width",
+                  "value": 192
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Execution Client Mainnet"
+              },
+              "properties": [
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "0": {
+                          "index": 0,
+                          "text": "NO CONFIGURED"
+                        },
+                        "1": {
+                          "index": 1,
+                          "text": "BESU"
+                        },
+                        "2": {
+                          "index": 2,
+                          "text": "ERIGON"
+                        },
+                        "3": {
+                          "index": 3,
+                          "text": "GETH"
+                        },
+                        "4": {
+                          "index": 4,
+                          "text": "NETHERMIND"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ]
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green"
+                      },
+                      {
+                        "color": "red",
+                        "value": 0
+                      },
+                      {
+                        "color": "light-yellow",
+                        "value": 1
+                      },
+                      {
+                        "color": "light-green",
+                        "value": 2
+                      },
+                      {
+                        "color": "light-blue",
+                        "value": 3
+                      },
+                      {
+                        "color": "light-purple",
+                        "value": 4
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "mode": "basic",
+                    "type": "color-background"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Consensus Client Mainnet"
+              },
+              "properties": [
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "0": {
+                          "index": 0,
+                          "text": "NO CONFIGURED"
+                        },
+                        "1": {
+                          "index": 1,
+                          "text": "LIGHTHOUSE"
+                        },
+                        "2": {
+                          "index": 2,
+                          "text": "NIMBUS"
+                        },
+                        "3": {
+                          "index": 3,
+                          "text": "PRYSM"
+                        },
+                        "4": {
+                          "index": 4,
+                          "text": "TEKU"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ]
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green"
+                      },
+                      {
+                        "color": "#E24D42",
+                        "value": 0
+                      },
+                      {
+                        "color": "light-yellow",
+                        "value": 1
+                      },
+                      {
+                        "color": "light-green",
+                        "value": 2
+                      },
+                      {
+                        "color": "light-blue",
+                        "value": 3
+                      },
+                      {
+                        "color": "light-purple",
+                        "value": 4
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "mode": "gradient",
+                    "type": "color-background"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Execution Client Gnosis"
+              },
+              "properties": [
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green"
+                      },
+                      {
+                        "color": "red",
+                        "value": 0
+                      },
+                      {
+                        "color": "light-yellow",
+                        "value": 1
+                      },
+                      {
+                        "color": "light-green",
+                        "value": 2
+                      },
+                      {
+                        "color": "light-blue",
+                        "value": 3
+                      },
+                      {
+                        "color": "light-purple",
+                        "value": 4
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "0": {
+                          "index": 0,
+                          "text": "NO CONFIGURED"
+                        },
+                        "1": {
+                          "index": 1,
+                          "text": "BESU"
+                        },
+                        "2": {
+                          "index": 2,
+                          "text": "ERIGON"
+                        },
+                        "3": {
+                          "index": 3,
+                          "text": "GETH"
+                        },
+                        "4": {
+                          "index": 4,
+                          "text": "NETHERMIND"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ]
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "mode": "basic",
+                    "type": "color-background"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Consensus Client Gnosis"
+              },
+              "properties": [
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "0": {
+                          "index": 0,
+                          "text": "NO CONFIGURED"
+                        },
+                        "1": {
+                          "index": 1,
+                          "text": "LIGHTHOUSE"
+                        },
+                        "2": {
+                          "index": 2,
+                          "text": "NIMBUS"
+                        },
+                        "3": {
+                          "index": 3,
+                          "text": "PRYSM"
+                        },
+                        "4": {
+                          "index": 4,
+                          "text": "TEKU"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ]
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green"
+                      },
+                      {
+                        "color": "red",
+                        "value": 0
+                      },
+                      {
+                        "color": "light-yellow",
+                        "value": 1
+                      },
+                      {
+                        "color": "light-green",
+                        "value": 2
+                      },
+                      {
+                        "color": "light-blue",
+                        "value": 3
+                      },
+                      {
+                        "color": "light-purple",
+                        "value": 4
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "mode": "basic",
+                    "type": "color-background"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Execution Client Prater"
+              },
+              "properties": [
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "0": {
+                          "index": 0,
+                          "text": "NO CONFIGURED"
+                        },
+                        "1": {
+                          "index": 1,
+                          "text": "BESU"
+                        },
+                        "2": {
+                          "index": 2,
+                          "text": "ERIGON"
+                        },
+                        "3": {
+                          "index": 3,
+                          "text": "GETH"
+                        },
+                        "4": {
+                          "index": 4,
+                          "text": "NETHERMIND"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ]
+                },
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green"
+                      },
+                      {
+                        "color": "red",
+                        "value": 0
+                      },
+                      {
+                        "color": "light-yellow",
+                        "value": 1
+                      },
+                      {
+                        "color": "light-green",
+                        "value": 2
+                      },
+                      {
+                        "color": "light-blue",
+                        "value": 3
+                      },
+                      {
+                        "color": "light-purple",
+                        "value": 4
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "mode": "basic",
+                    "type": "color-background"
+                  }
+                }
+              ]
+            },
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Consensus Client Prater"
+              },
+              "properties": [
+                {
+                  "id": "thresholds",
+                  "value": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green"
+                      },
+                      {
+                        "color": "red",
+                        "value": 0
+                      },
+                      {
+                        "color": "light-yellow",
+                        "value": 1
+                      },
+                      {
+                        "color": "light-green",
+                        "value": 2
+                      },
+                      {
+                        "color": "light-blue",
+                        "value": 3
+                      },
+                      {
+                        "color": "light-purple",
+                        "value": 4
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "mappings",
+                  "value": [
+                    {
+                      "options": {
+                        "0": {
+                          "index": 0,
+                          "text": "NO CONFIGURED"
+                        },
+                        "1": {
+                          "index": 1,
+                          "text": "LIGHTHOUSE"
+                        },
+                        "2": {
+                          "index": 2,
+                          "text": "NIMBUS"
+                        },
+                        "3": {
+                          "index": 3,
+                          "text": "PRYSM"
+                        },
+                        "4": {
+                          "index": 4,
+                          "text": "TEKU"
+                        }
+                      },
+                      "type": "value"
+                    }
+                  ]
+                },
+                {
+                  "id": "custom.cellOptions",
+                  "value": {
+                    "mode": "basic",
+                    "type": "color-background"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 24,
+          "x": 0,
+          "y": 22
+        },
+        "id": 12,
+        "options": {
+          "footer": {
+            "fields": "",
+            "reducer": [
+              "sum"
+            ],
+            "show": false
+          },
+          "showHeader": true,
+          "sortBy": []
+        },
+        "pluginVersion": "9.3.1",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "dappmanager_auto_updates_system_packages",
+            "format": "table",
+            "instant": true,
+            "legendFormat": "{{instance}}",
+            "range": false,
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "dappmanager_auto_updates_user_packages",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "legendFormat": "{{instance}}",
+            "range": false,
+            "refId": "B"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "dappmanager_eth_client_target_local",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "legendFormat": "{{instance}}",
+            "range": false,
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "dappmanager_eth_fallback_enabled",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "legendFormat": "{{instance}}",
+            "range": false,
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "dappmanager_ipfs_client_target_local",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "legendFormat": "{{instance}}",
+            "range": false,
+            "refId": "E"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "dappmanager_staker_config{consensusClient=\"mainnet\"}",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "legendFormat": "{{instance}}",
+            "range": false,
+            "refId": "F"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "dappmanager_staker_config{consensusClient=\"gnosis\"}",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "legendFormat": "{{instance}}",
+            "range": false,
+            "refId": "G"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "dappmanager_staker_config{executionClient=\"mainnet\"}",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "legendFormat": "{{instance}}",
+            "range": false,
+            "refId": "I"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "dappmanager_staker_config{consensusClient=\"prater\"}",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "legendFormat": "{{instance}}",
+            "range": false,
+            "refId": "H"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "dappmanager_staker_config{executionClient=\"gnosis\"}",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "legendFormat": "{{instance}}",
+            "range": false,
+            "refId": "J"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "dappmanager_staker_config{executionClient=\"prater\"}",
+            "format": "table",
+            "hide": false,
+            "instant": true,
+            "legendFormat": "{{instance}}",
+            "range": false,
+            "refId": "K"
+          }
+        ],
+        "title": "Dappmanager custom metrics",
+        "transformations": [
+          {
+            "id": "joinByField",
+            "options": {
+              "byField": "instance",
+              "mode": "inner"
+            }
+          },
+          {
+            "id": "organize",
+            "options": {
+              "excludeByName": {
+                "Time 1": true,
+                "Time 10": true,
+                "Time 11": true,
+                "Time 2": true,
+                "Time 3": true,
+                "Time 4": true,
+                "Time 5": true,
+                "Time 6": true,
+                "Time 7": true,
+                "Time 8": true,
+                "Time 9": true,
+                "Value #A": false,
+                "Value #B": false,
+                "Value #F": false,
+                "__name__ 1": true,
+                "__name__ 10": true,
+                "__name__ 11": true,
+                "__name__ 2": true,
+                "__name__ 3": true,
+                "__name__ 4": true,
+                "__name__ 5": true,
+                "__name__ 6": true,
+                "__name__ 7": true,
+                "__name__ 8": true,
+                "__name__ 9": true,
+                "app 1": true,
+                "app 10": true,
+                "app 11": true,
+                "app 2": true,
+                "app 3": true,
+                "app 4": true,
+                "app 5": true,
+                "app 6": true,
+                "app 7": true,
+                "app 8": true,
+                "app 9": true,
+                "autoUpdatesSystemPackages": true,
+                "autoUpdatesUserPackages": true,
+                "consensusClient": true,
+                "consensusClient 2": true,
+                "consensusClient 3": true,
+                "email 1": false,
+                "email 10": true,
+                "email 11": true,
+                "email 2": true,
+                "email 3": true,
+                "email 4": true,
+                "email 5": true,
+                "email 6": true,
+                "email 7": true,
+                "email 8": true,
+                "email 9": true,
+                "ethClientTargetLocal": true,
+                "ethFallbackEnabled": true,
+                "executionClient": false,
+                "executionClient 1": true,
+                "executionClient 2": true,
+                "executionClient 3": true,
+                "exported_instance 1": true,
+                "exported_instance 10": true,
+                "exported_instance 11": true,
+                "exported_instance 2": true,
+                "exported_instance 3": true,
+                "exported_instance 4": true,
+                "exported_instance 5": true,
+                "exported_instance 6": true,
+                "exported_instance 7": true,
+                "exported_instance 8": true,
+                "exported_instance 9": true,
+                "exported_job 1": true,
+                "exported_job 10": true,
+                "exported_job 11": true,
+                "exported_job 2": true,
+                "exported_job 3": true,
+                "exported_job 4": true,
+                "exported_job 5": true,
+                "exported_job 6": true,
+                "exported_job 7": true,
+                "exported_job 8": true,
+                "exported_job 9": true,
+                "ipfsClientTargetLocal": true,
+                "job 1": true,
+                "job 10": true,
+                "job 11": true,
+                "job 2": true,
+                "job 3": true,
+                "job 4": true,
+                "job 5": true,
+                "job 6": true,
+                "job 7": true,
+                "job 8": true,
+                "job 9": true,
+                "mevBoost": false,
+                "package 1": true,
+                "package 10": true,
+                "package 11": true,
+                "package 2": true,
+                "package 3": true,
+                "package 4": true,
+                "package 5": true,
+                "package 6": true,
+                "package 7": true,
+                "package 8": true,
+                "package 9": true,
+                "primary 1": true,
+                "primary 10": true,
+                "primary 11": true,
+                "primary 2": true,
+                "primary 3": true,
+                "primary 4": true,
+                "primary 5": true,
+                "primary 6": true,
+                "primary 7": true,
+                "primary 8": true,
+                "primary 9": true,
+                "service 1": true,
+                "service 10": true,
+                "service 11": true,
+                "service 2": true,
+                "service 3": true,
+                "service 4": true,
+                "service 5": true,
+                "service 6": true,
+                "service 7": true,
+                "service 8": true,
+                "service 9": true
+              },
+              "indexByName": {
+                "Time 1": 2,
+                "Time 10": 105,
+                "Time 11": 122,
+                "Time 2": 13,
+                "Time 3": 25,
+                "Time 4": 37,
+                "Time 5": 49,
+                "Time 6": 61,
+                "Time 7": 72,
+                "Time 8": 83,
+                "Time 9": 94,
+                "Value #A": 12,
+                "Value #B": 24,
+                "Value #C": 36,
+                "Value #D": 48,
+                "Value #E": 60,
+                "Value #F": 117,
+                "Value #G": 119,
+                "Value #H": 121,
+                "Value #I": 116,
+                "Value #J": 118,
+                "Value #K": 120,
+                "__name__ 1": 3,
+                "__name__ 10": 106,
+                "__name__ 11": 123,
+                "__name__ 2": 14,
+                "__name__ 3": 26,
+                "__name__ 4": 38,
+                "__name__ 5": 50,
+                "__name__ 6": 62,
+                "__name__ 7": 73,
+                "__name__ 8": 84,
+                "__name__ 9": 95,
+                "app 1": 4,
+                "app 10": 107,
+                "app 11": 124,
+                "app 2": 15,
+                "app 3": 27,
+                "app 4": 39,
+                "app 5": 51,
+                "app 6": 63,
+                "app 7": 74,
+                "app 8": 85,
+                "app 9": 96,
+                "autoUpdatesSystemPackages": 5,
+                "autoUpdatesUserPackages": 16,
+                "consensusClient 1": 64,
+                "consensusClient 2": 75,
+                "consensusClient 3": 86,
+                "email 1": 1,
+                "email 10": 108,
+                "email 11": 125,
+                "email 2": 17,
+                "email 3": 28,
+                "email 4": 40,
+                "email 5": 52,
+                "email 6": 65,
+                "email 7": 76,
+                "email 8": 87,
+                "email 9": 97,
+                "ethClientTargetLocal": 29,
+                "ethFallbackEnabled": 41,
+                "executionClient 1": 98,
+                "executionClient 2": 109,
+                "executionClient 3": 126,
+                "exported_instance 1": 6,
+                "exported_instance 10": 110,
+                "exported_instance 11": 127,
+                "exported_instance 2": 18,
+                "exported_instance 3": 30,
+                "exported_instance 4": 42,
+                "exported_instance 5": 53,
+                "exported_instance 6": 66,
+                "exported_instance 7": 77,
+                "exported_instance 8": 88,
+                "exported_instance 9": 99,
+                "exported_job 1": 7,
+                "exported_job 10": 111,
+                "exported_job 11": 128,
+                "exported_job 2": 19,
+                "exported_job 3": 31,
+                "exported_job 4": 43,
+                "exported_job 5": 54,
+                "exported_job 6": 67,
+                "exported_job 7": 78,
+                "exported_job 8": 89,
+                "exported_job 9": 100,
+                "instance": 0,
+                "ipfsClientTargetLocal": 55,
+                "job 1": 8,
+                "job 10": 112,
+                "job 11": 129,
+                "job 2": 20,
+                "job 3": 32,
+                "job 4": 44,
+                "job 5": 56,
+                "job 6": 68,
+                "job 7": 79,
+                "job 8": 90,
+                "job 9": 101,
+                "package 1": 9,
+                "package 10": 113,
+                "package 11": 130,
+                "package 2": 21,
+                "package 3": 33,
+                "package 4": 45,
+                "package 5": 57,
+                "package 6": 69,
+                "package 7": 80,
+                "package 8": 91,
+                "package 9": 102,
+                "primary 1": 10,
+                "primary 10": 114,
+                "primary 11": 131,
+                "primary 2": 22,
+                "primary 3": 34,
+                "primary 4": 46,
+                "primary 5": 58,
+                "primary 6": 70,
+                "primary 7": 81,
+                "primary 8": 92,
+                "primary 9": 103,
+                "service 1": 11,
+                "service 10": 115,
+                "service 11": 132,
+                "service 2": 23,
+                "service 3": 35,
+                "service 4": 47,
+                "service 5": 59,
+                "service 6": 71,
+                "service 7": 82,
+                "service 8": 93,
+                "service 9": 104
+              },
+              "renameByName": {
+                "Time 2": "",
+                "Value #A": "Auto Updates System Packages",
+                "Value #B": "Auto Updates User Packages",
+                "Value #C": "Ethereum Client",
+                "Value #D": "Ethereum Fallback",
+                "Value #E": "IPFS Client",
+                "Value #F": "Consensus Client Mainnet",
+                "Value #G": "Consensus Client Gnosis",
+                "Value #H": "Consensus Client Prater",
+                "Value #I": "Execution Client Mainnet",
+                "Value #J": "Execution Client Gnosis",
+                "Value #K": "Execution Client Prater",
+                "autoUpdatesUserPackages": ""
+              }
+            }
+          }
+        ],
+        "type": "table"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "DS_PROMETHEUS"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 2,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green"
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percentunit"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 12,
+          "w": 24,
+          "x": 0,
+          "y": 31
+        },
+        "id": 10,
+        "options": {
+          "legend": {
+            "calcs": [
+              "last",
+              "max",
+              "min",
+              "mean"
+            ],
+            "displayMode": "table",
+            "placement": "right",
+            "showLegend": true,
+            "sortBy": "Last",
+            "sortDesc": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "sum(rate(container_cpu_usage_seconds_total{container_label_dappnode_dnp_dnpName!=\"\", instance=~\"$Instance\", image=~\"$image\"}[5m])) by (image, instance) / on(instance) group_left(email) count(node_cpu_seconds_total{instance=~\"$Instance\",mode=\"user\"}) by (instance,email)",
+            "hide": false,
+            "instant": false,
+            "legendFormat": "{{image}} - {{instance}}",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "CPU Usage per Package",
+        "transformations": [
+          {
+            "id": "renameByRegex",
+            "options": {
+              "regex": "(.*).(dnp|public).dappnode.eth:(.*) - (.....).*(...).onion:9090",
+              "renamePattern": "$1:$3 - $4...$5"
+            }
+          }
+        ],
+        "type": "timeseries"
+      }
+    ],
+    "refresh": "10s",
+    "schemaVersion": 38,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "All",
+            "value": "$__all"
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "DS_PROMETHEUS"
+          },
+          "definition": "up",
+          "hide": 0,
+          "includeAll": true,
+          "multi": true,
+          "name": "Instance",
+          "options": [],
+          "query": {
+            "query": "up",
+            "refId": "StandardVariableQuery"
+          },
+          "refresh": 1,
+          "regex": "/.*instance=\"([^,]*)\",.*/",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "fgjhI1FVz"
+          },
+          "filters": [],
+          "hide": 0,
+          "name": "Filters",
+          "skipUrlSync": false,
+          "type": "adhoc"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "All",
+            "value": "$__all"
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "DS_PROMETHEUS"
+          },
+          "definition": "container_last_seen{container_label_dappnode_dnp_dnpName!=\"\"}",
+          "description": "image",
+          "hide": 0,
+          "includeAll": true,
+          "label": "image",
+          "multi": true,
+          "name": "image",
+          "options": [],
+          "query": {
+            "query": "container_last_seen{container_label_dappnode_dnp_dnpName!=\"\"}",
+            "refId": "StandardVariableQuery"
+          },
+          "refresh": 1,
+          "regex": "/.*image=\"([^\"]*)\",.*/",
+          "skipUrlSync": false,
+          "sort": 1,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-30m",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "DAppNode Monitor Over TOR",
+    "uid": "4fByI1KVz",
+    "version": 1,
+    "weekStart": ""
+  }
