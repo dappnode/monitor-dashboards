@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Release version'
+        description: "Release version"
         required: true
 
 jobs:
@@ -14,10 +14,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Create Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Release
+        uses: softprops/action-gh-release@v1
         with:
-          draft: false
-          prerelease: false
+          files: |
+            ethical_dashboard.json
+            monitor_tor.json
+          token: ${{ secrets.GITHUB_TOKEN }}
