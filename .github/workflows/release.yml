@@ -20,5 +20,6 @@ jobs:
           tag_name: ${{ github.event.inputs.version }}
           files: |
             ethical_dashboard.json
+            ethical_dashboard_aggr.json
             monitor_tor.json
           token: ${{ secrets.GITHUB_TOKEN }}
