@@ -1,0 +1,2351 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 14,
+        "panels": [],
+        "title": "General Stats",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 13,
+          "x": 0,
+          "y": 1
+        },
+        "id": 4,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "up_percentage_aggr",
+            "legendFormat": "UP dappnodes",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "% UP dappnodes",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 3,
+          "x": 13,
+          "y": 1
+        },
+        "id": 23,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "cpu_average_by_instance_aggr",
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "CPU Load",
+        "type": "gauge"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 3,
+          "x": 16,
+          "y": 1
+        },
+        "id": 22,
+        "options": {
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "sum (100 * (1 - (sum(node_memory_MemFree_bytes + node_memory_Buffers_bytes + node_memory_Cached_bytes) by (instance) / sum(node_memory_MemTotal_bytes) by (instance)))) / count(node_memory_MemFree_bytes * 100)",
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Memory Load",
+        "type": "gauge"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 1,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 5,
+          "w": 5,
+          "x": 19,
+          "y": 1
+        },
+        "id": 5,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "sum(dappmanager_auto_updates_system_packages) / count(dappmanager_auto_updates_system_packages) * 100",
+            "legendFormat": "sys pkg",
+            "range": true,
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "sum(dappmanager_auto_updates_user_packages) / count(dappmanager_auto_updates_user_packages) * 100",
+            "hide": false,
+            "legendFormat": "usr pkg",
+            "range": true,
+            "refId": "B"
+          }
+        ],
+        "title": "Auto updates ON",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 13,
+          "y": 6
+        },
+        "id": 24,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "max"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "count(up{job=\"manager_sd\"})",
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Total Targets",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 1,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 5,
+          "x": 16,
+          "y": 6
+        },
+        "id": 6,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "sum(dappmanager_eth_fallback_enabled) / count(dappmanager_eth_fallback_enabled) * 100",
+            "legendFormat": "fallback enabled",
+            "range": true,
+            "refId": "A"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "sum(dappmanager_eth_client_target_local) / count(dappmanager_eth_client_target_local) * 100",
+            "hide": false,
+            "legendFormat": "local ethereum",
+            "range": true,
+            "refId": "B"
+          }
+        ],
+        "title": "Ethereum client ",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "decimals": 1,
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 3,
+          "x": 21,
+          "y": 6
+        },
+        "id": 7,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "none",
+          "justifyMode": "center",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "sum(dappmanager_ipfs_client_target_local) / count(dappmanager_ipfs_client_target_local) * 100",
+            "legendFormat": "fallback enabled",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "IPFS Local",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 10
+        },
+        "id": 20,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "cpu_average_by_instance_aggr",
+            "legendFormat": "CPU",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "CPU Load over time",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percent"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 10
+        },
+        "id": 21,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "sum (100 * (1 - (sum(node_memory_MemFree_bytes + node_memory_Buffers_bytes + node_memory_Cached_bytes) by (instance) / sum(node_memory_MemTotal_bytes) by (instance)))) / count(node_memory_MemFree_bytes * 100)",
+            "legendFormat": "Memory",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Memory Load over time",
+        "type": "timeseries"
+      },
+      {
+        "collapsed": true,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 18
+        },
+        "id": 15,
+        "panels": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "decimals": 1,
+                "mappings": [],
+                "max": 100,
+                "min": 0,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    }
+                  ]
+                },
+                "unit": "percent"
+              },
+              "overrides": [
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "count(dappmanager_staker_config{executionClient=\"prater\"} == 3)"
+                  },
+                  "properties": [
+                    {
+                      "id": "mappings",
+                      "value": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 0,
+              "y": 27
+            },
+            "id": 8,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "9.5.2",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{executionClient=\"prater\"} == 0)) / scalar(count(dappmanager_staker_config{executionClient=\"prater\"})) * 100",
+                "legendFormat": "Not configured",
+                "range": true,
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{executionClient=\"prater\"} == 1)) / scalar(count(dappmanager_staker_config{executionClient=\"prater\"})) * 100",
+                "hide": false,
+                "legendFormat": "Besu",
+                "range": true,
+                "refId": "C"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{executionClient=\"prater\"} == 2)) / scalar(count(dappmanager_staker_config{executionClient=\"prater\"})) * 100",
+                "hide": false,
+                "legendFormat": "Erigon",
+                "range": true,
+                "refId": "D"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{executionClient=\"prater\"} == 3)) / scalar(count(dappmanager_staker_config{executionClient=\"prater\"})) * 100",
+                "hide": false,
+                "legendFormat": "Geth",
+                "range": true,
+                "refId": "E"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{executionClient=\"prater\"} == 4)) / scalar(count(dappmanager_staker_config{executionClient=\"prater\"})) * 100",
+                "hide": false,
+                "legendFormat": "Nethermind",
+                "range": true,
+                "refId": "F"
+              }
+            ],
+            "title": "Prater Clients - Execution",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "decimals": 1,
+                "mappings": [],
+                "max": 100,
+                "min": 0,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    }
+                  ]
+                },
+                "unit": "percent"
+              },
+              "overrides": [
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "count(dappmanager_staker_config{executionClient=\"prater\"} == 3)"
+                  },
+                  "properties": [
+                    {
+                      "id": "mappings",
+                      "value": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 12,
+              "y": 27
+            },
+            "id": 9,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "9.5.2",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"prater\"} == 0)) / scalar(count(dappmanager_staker_config{consensusClient=\"prater\"})) * 100",
+                "legendFormat": "Not configured",
+                "range": true,
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"prater\"} == 1)) / scalar(count(dappmanager_staker_config{consensusClient=\"prater\"})) * 100",
+                "hide": false,
+                "legendFormat": "Lighthouse",
+                "range": true,
+                "refId": "C"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"prater\"} == 2)) / scalar(count(dappmanager_staker_config{consensusClient=\"prater\"})) * 100",
+                "hide": false,
+                "legendFormat": "Nimbus",
+                "range": true,
+                "refId": "D"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"prater\"} == 3)) / scalar(count(dappmanager_staker_config{consensusClient=\"prater\"})) * 100",
+                "hide": false,
+                "legendFormat": "Prysm",
+                "range": true,
+                "refId": "E"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"prater\"} == 4)) / scalar(count(dappmanager_staker_config{consensusClient=\"prater\"})) * 100",
+                "hide": false,
+                "legendFormat": "Teku",
+                "range": true,
+                "refId": "F"
+              }
+            ],
+            "title": "Prater Clients - Consensus",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "decimals": 1,
+                "mappings": [],
+                "max": 100,
+                "min": 0,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    }
+                  ]
+                },
+                "unit": "percent"
+              },
+              "overrides": [
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "count(dappmanager_staker_config{executionClient=\"prater\"} == 3)"
+                  },
+                  "properties": [
+                    {
+                      "id": "mappings",
+                      "value": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 12,
+              "x": 0,
+              "y": 35
+            },
+            "id": 10,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "9.5.2",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"} == 0)) / scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"})) * 100",
+                "legendFormat": "Not configured",
+                "range": true,
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"} == 1)) / scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"})) * 100",
+                "hide": false,
+                "legendFormat": "Besu",
+                "range": true,
+                "refId": "C"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"} == 2)) / scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"})) * 100",
+                "hide": false,
+                "legendFormat": "Erigon",
+                "range": true,
+                "refId": "D"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"} == 3)) / scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"})) * 100",
+                "hide": false,
+                "legendFormat": "Geth",
+                "range": true,
+                "refId": "E"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"} == 4)) / scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"})) * 100",
+                "hide": false,
+                "legendFormat": "Nethermind",
+                "range": true,
+                "refId": "F"
+              }
+            ],
+            "title": "Mainnet Clients - Execution",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "decimals": 1,
+                "mappings": [],
+                "max": 100,
+                "min": 0,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    }
+                  ]
+                },
+                "unit": "percent"
+              },
+              "overrides": [
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "count(dappmanager_staker_config{executionClient=\"prater\"} == 3)"
+                  },
+                  "properties": [
+                    {
+                      "id": "mappings",
+                      "value": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 12,
+              "x": 12,
+              "y": 35
+            },
+            "id": 11,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "9.5.2",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"mainnet\"} == 0)) / scalar(count(dappmanager_staker_config{consensusClient=\"mainnet\"})) * 100",
+                "legendFormat": "Not configured",
+                "range": true,
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"mainnet\"} == 1)) / scalar(count(dappmanager_staker_config{consensusClient=\"mainnet\"})) * 100",
+                "hide": false,
+                "legendFormat": "Lighthouse",
+                "range": true,
+                "refId": "C"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"mainnet\"} == 2)) / scalar(count(dappmanager_staker_config{consensusClient=\"mainnet\"})) * 100",
+                "hide": false,
+                "legendFormat": "Nimbus",
+                "range": true,
+                "refId": "D"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"mainnet\"} == 3)) / scalar(count(dappmanager_staker_config{consensusClient=\"mainnet\"})) * 100",
+                "hide": false,
+                "legendFormat": "Prysm",
+                "range": true,
+                "refId": "E"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"prater\"} == 4)) / scalar(count(dappmanager_staker_config{consensusClient=\"prater\"})) * 100",
+                "hide": false,
+                "legendFormat": "Teku",
+                "range": true,
+                "refId": "F"
+              }
+            ],
+            "title": "Mainnet Clients - Consensus",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "decimals": 1,
+                "mappings": [],
+                "max": 100,
+                "min": 0,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    }
+                  ]
+                },
+                "unit": "percent"
+              },
+              "overrides": [
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "count(dappmanager_staker_config{executionClient=\"prater\"} == 3)"
+                  },
+                  "properties": [
+                    {
+                      "id": "mappings",
+                      "value": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 12,
+              "x": 0,
+              "y": 42
+            },
+            "id": 12,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "9.5.2",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"} == 0)) / scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"})) * 100",
+                "legendFormat": "Not configured",
+                "range": true,
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"} == 1)) / scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"})) * 100",
+                "hide": false,
+                "legendFormat": "Besu",
+                "range": true,
+                "refId": "C"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"} == 2)) / scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"})) * 100",
+                "hide": false,
+                "legendFormat": "Erigon",
+                "range": true,
+                "refId": "D"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"} == 3)) / scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"})) * 100",
+                "hide": false,
+                "legendFormat": "Geth",
+                "range": true,
+                "refId": "E"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"} == 4)) / scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"})) * 100",
+                "hide": false,
+                "legendFormat": "Nethermind",
+                "range": true,
+                "refId": "F"
+              }
+            ],
+            "title": "Gnosis Clients - Execution",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "decimals": 1,
+                "mappings": [],
+                "max": 100,
+                "min": 0,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    }
+                  ]
+                },
+                "unit": "percent"
+              },
+              "overrides": [
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "count(dappmanager_staker_config{executionClient=\"prater\"} == 3)"
+                  },
+                  "properties": [
+                    {
+                      "id": "mappings",
+                      "value": []
+                    }
+                  ]
+                }
+              ]
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 12,
+              "x": 12,
+              "y": 42
+            },
+            "id": 13,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "9.5.2",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"} == 0)) / scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"})) * 100",
+                "legendFormat": "Not configured",
+                "range": true,
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"} == 1)) / scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"})) * 100",
+                "hide": false,
+                "legendFormat": "Lighthouse",
+                "range": true,
+                "refId": "C"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"} == 2)) / scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"})) * 100",
+                "hide": false,
+                "legendFormat": "Nimbus",
+                "range": true,
+                "refId": "D"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"} == 3)) / scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"})) * 100",
+                "hide": false,
+                "legendFormat": "Prysm",
+                "range": true,
+                "refId": "E"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"} == 4)) / scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"})) * 100",
+                "hide": false,
+                "legendFormat": "Teku",
+                "range": true,
+                "refId": "F"
+              }
+            ],
+            "title": "Gnosis Clients - Consensus",
+            "type": "timeseries"
+          }
+        ],
+        "title": "Staker Clients",
+        "type": "row"
+      },
+      {
+        "collapsed": true,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 19
+        },
+        "id": 16,
+        "panels": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 10,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "percentunit"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 12,
+              "w": 24,
+              "x": 0,
+              "y": 20
+            },
+            "id": 3,
+            "options": {
+              "legend": {
+                "calcs": [
+                  "lastNotNull",
+                  "min",
+                  "max",
+                  "mean"
+                ],
+                "displayMode": "table",
+                "placement": "right",
+                "showLegend": true,
+                "sortBy": "Last *",
+                "sortDesc": true
+              },
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "pluginVersion": "8.0.6",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "PBFE396EC0B189D67"
+                },
+                "editorMode": "code",
+                "expr": "cpu_usage_total_by_container_aggr / 1000",
+                "format": "time_series",
+                "instant": false,
+                "interval": "",
+                "legendFormat": "{{container_name}}",
+                "refId": "A"
+              }
+            ],
+            "title": "Container CPU Usage USING RECORDED RULES",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "custom": {
+                  "align": "auto",
+                  "cellOptions": {
+                    "type": "auto"
+                  },
+                  "inspect": false
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": [
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "% of Installations"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.cellOptions",
+                      "value": {
+                        "mode": "gradient",
+                        "type": "gauge"
+                      }
+                    },
+                    {
+                      "id": "unit",
+                      "value": "percentunit"
+                    },
+                    {
+                      "id": "max",
+                      "value": 1
+                    },
+                    {
+                      "id": "thresholds",
+                      "value": {
+                        "mode": "absolute",
+                        "steps": [
+                          {
+                            "color": "red",
+                            "value": null
+                          },
+                          {
+                            "color": "#EAB839",
+                            "value": 0.4
+                          },
+                          {
+                            "color": "green",
+                            "value": 0.8
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "image"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.width",
+                      "value": 212
+                    }
+                  ]
+                }
+              ]
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 9,
+              "x": 0,
+              "y": 32
+            },
+            "id": 17,
+            "options": {
+              "cellHeight": "sm",
+              "footer": {
+                "countRows": false,
+                "enablePagination": false,
+                "fields": "",
+                "reducer": [
+                  "sum"
+                ],
+                "show": false
+              },
+              "showHeader": true,
+              "sortBy": [
+                {
+                  "desc": true,
+                  "displayName": "% of Installations"
+                }
+              ]
+            },
+            "pluginVersion": "9.5.2",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "DS_PROMETHEUS"
+                },
+                "editorMode": "code",
+                "exemplar": false,
+                "expr": "count(container_last_seen{container_label_dappnode_dnp_dnpName!=\"\", instance=~\"$Instance\"}) by (image)",
+                "format": "table",
+                "hide": false,
+                "instant": true,
+                "legendFormat": "{{image}} - {{instance}}",
+                "range": false,
+                "refId": "A"
+              },
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "DS_PROMETHEUS"
+                },
+                "editorMode": "code",
+                "exemplar": false,
+                "expr": "count(container_last_seen{container_label_dappnode_dnp_dnpName!=\"\", instance=~\"$Instance\"}) by (image) / scalar(count(up{service=\"\",exported_instance=\"\"}))",
+                "format": "table",
+                "hide": false,
+                "instant": true,
+                "legendFormat": "{{image}} - {{instance}}",
+                "range": false,
+                "refId": "B"
+              }
+            ],
+            "title": "Packages Installed",
+            "transformations": [
+              {
+                "id": "joinByField",
+                "options": {
+                  "byField": "image",
+                  "mode": "outer"
+                }
+              },
+              {
+                "id": "organize",
+                "options": {
+                  "excludeByName": {
+                    "Time 1": true,
+                    "Time 2": true
+                  },
+                  "indexByName": {},
+                  "renameByName": {
+                    "Value #A": "Installed Packages",
+                    "Value #B": "% of Installations"
+                  }
+                }
+              }
+            ],
+            "type": "table"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "custom": {
+                  "align": "auto",
+                  "cellOptions": {
+                    "type": "auto"
+                  },
+                  "inspect": false
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": [
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "instance"
+                  },
+                  "properties": [
+                    {
+                      "id": "mappings",
+                      "value": [
+                        {
+                          "options": {
+                            "pattern": "(.....).*(...).onion:9090",
+                            "result": {
+                              "index": 1,
+                              "text": "$1 ... $2"
+                            }
+                          },
+                          "type": "regex"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "custom.width",
+                      "value": 135
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "image"
+                  },
+                  "properties": [
+                    {
+                      "id": "mappings",
+                      "value": [
+                        {
+                          "options": {
+                            "": {
+                              "index": 0,
+                              "text": "$1:$3"
+                            }
+                          },
+                          "type": "value"
+                        },
+                        {
+                          "options": {
+                            "pattern": "(.*).(dnp|public).dappnode.eth:(.*)",
+                            "result": {
+                              "index": 1,
+                              "text": "$1:$3"
+                            }
+                          },
+                          "type": "regex"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "custom.width",
+                      "value": 152
+                    }
+                  ]
+                }
+              ]
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 7,
+              "x": 9,
+              "y": 32
+            },
+            "id": 19,
+            "options": {
+              "cellHeight": "sm",
+              "footer": {
+                "countRows": false,
+                "fields": "",
+                "reducer": [
+                  "sum"
+                ],
+                "show": false
+              },
+              "showHeader": true,
+              "sortBy": [
+                {
+                  "desc": false,
+                  "displayName": "image"
+                }
+              ]
+            },
+            "pluginVersion": "9.5.2",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "DS_PROMETHEUS"
+                },
+                "editorMode": "code",
+                "exemplar": false,
+                "expr": "count by (instance,image)(count_over_time(container_last_seen{container_label_dappnode_dnp_dnpName!=\"\", instance=~\"$Instance\"}[15m])) - 1 > 1",
+                "format": "table",
+                "instant": true,
+                "legendFormat": "{{image}} - {{instance}}",
+                "range": false,
+                "refId": "A"
+              }
+            ],
+            "title": "Packages Restarted last 15min",
+            "transformations": [
+              {
+                "id": "organize",
+                "options": {
+                  "excludeByName": {
+                    "Time": true
+                  },
+                  "indexByName": {},
+                  "renameByName": {
+                    "Value": "Num. Restarts"
+                  }
+                }
+              }
+            ],
+            "type": "table"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "DS_PROMETHEUS"
+            },
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "custom": {
+                  "align": "auto",
+                  "cellOptions": {
+                    "type": "auto"
+                  },
+                  "inspect": false
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": [
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "instance"
+                  },
+                  "properties": [
+                    {
+                      "id": "mappings",
+                      "value": [
+                        {
+                          "options": {
+                            "pattern": "(.....).*(...).onion:9090",
+                            "result": {
+                              "index": 0,
+                              "text": "$1 ... $2"
+                            }
+                          },
+                          "type": "regex"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "custom.width",
+                      "value": 114
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "dockerVersion"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.width",
+                      "value": 118
+                    }
+                  ]
+                },
+                {
+                  "matcher": {
+                    "id": "byName",
+                    "options": "email"
+                  },
+                  "properties": [
+                    {
+                      "id": "custom.width",
+                      "value": 154
+                    }
+                  ]
+                }
+              ]
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 8,
+              "x": 16,
+              "y": 32
+            },
+            "id": 18,
+            "options": {
+              "cellHeight": "sm",
+              "footer": {
+                "countRows": false,
+                "fields": "",
+                "reducer": [
+                  "sum"
+                ],
+                "show": false
+              },
+              "showHeader": true,
+              "sortBy": [
+                {
+                  "desc": true,
+                  "displayName": "kernelVersion"
+                }
+              ]
+            },
+            "pluginVersion": "9.5.2",
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "DS_PROMETHEUS"
+                },
+                "editorMode": "code",
+                "exemplar": false,
+                "expr": "cadvisor_version_info{instance=~\"$Instance\"}",
+                "format": "table",
+                "instant": true,
+                "legendFormat": "__auto",
+                "range": false,
+                "refId": "A"
+              }
+            ],
+            "title": "System Info",
+            "transformations": [
+              {
+                "id": "organize",
+                "options": {
+                  "excludeByName": {
+                    "Time": true,
+                    "Value": true,
+                    "__name__": true,
+                    "cadvisorRevision": true,
+                    "cadvisorVersion": true,
+                    "exported_instance": true,
+                    "exported_job": true,
+                    "job": true,
+                    "osVersion": true,
+                    "primary": true
+                  },
+                  "indexByName": {
+                    "Time": 2,
+                    "Value": 13,
+                    "__name__": 3,
+                    "cadvisorRevision": 4,
+                    "cadvisorVersion": 5,
+                    "dockerVersion": 6,
+                    "email": 1,
+                    "exported_instance": 7,
+                    "exported_job": 8,
+                    "instance": 0,
+                    "job": 9,
+                    "kernelVersion": 10,
+                    "osVersion": 11,
+                    "primary": 12
+                  },
+                  "renameByName": {}
+                }
+              }
+            ],
+            "type": "table"
+          }
+        ],
+        "title": "All Packages",
+        "type": "row"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 38,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "All",
+            "value": "$__all"
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFE396EC0B189D67"
+          },
+          "definition": "container_last_seen{container_label_dappnode_dnp_dnpName!=\"\"}",
+          "description": "image",
+          "hide": 0,
+          "includeAll": true,
+          "label": "image",
+          "multi": true,
+          "name": "image",
+          "options": [],
+          "query": {
+            "query": "container_last_seen{container_label_dappnode_dnp_dnpName!=\"\"}",
+            "refId": "PrometheusVariableQueryEditor-VariableQuery"
+          },
+          "refresh": 1,
+          "regex": "/.*image=\"([^\"]*)\",.*/",
+          "skipUrlSync": false,
+          "sort": 1,
+          "type": "query"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "All",
+            "value": "$__all"
+          },
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFE396EC0B189D67"
+          },
+          "definition": "up",
+          "hide": 0,
+          "includeAll": true,
+          "multi": true,
+          "name": "Instance",
+          "options": [],
+          "query": {
+            "query": "up",
+            "refId": "PrometheusVariableQueryEditor-VariableQuery"
+          },
+          "refresh": 1,
+          "regex": "/.*instance=\"([^,]*)\",.*/",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-30m",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Ethical Dashboard",
+    "uid": "ae7f167b-48ed-4416-ac84-9fc17a23cb77",
+    "version": 1,
+    "weekStart": ""
+  }
