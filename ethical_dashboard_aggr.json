@@ -780,8 +780,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               },
@@ -934,8 +933,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               },
@@ -1088,8 +1086,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               },
@@ -1242,8 +1239,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               },
@@ -1396,8 +1392,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               },
@@ -1550,8 +1545,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   }
                 ]
               },
@@ -1724,7 +1718,7 @@
                   }
                 ]
               },
-              "unit": "percent"
+              "unit": "percentunit"
             },
             "overrides": []
           },
@@ -2347,6 +2341,6 @@
   "timezone": "",
   "title": "Ethical Dashboard Aggregator",
   "uid": "ae7f167b-48ed-4416-ac84-9fc17a23cb77",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
