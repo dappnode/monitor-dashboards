@@ -1721,7 +1721,7 @@
                   }
                 ]
               },
-              "unit": "percent"
+              "unit": "percentunit"
             },
             "overrides": []
           },
@@ -2344,6 +2344,6 @@
   "timezone": "",
   "title": "Ethical Dashboard",
   "uid": "ae7f167b-48ed-4416-ac84-9fc17a23cb77",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
