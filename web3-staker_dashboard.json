@@ -1,0 +1,923 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 3,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 0
+        },
+        "id": 109,
+        "title": "Execution and Consensus Client Stats",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "red",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 5
+                },
+                {
+                  "color": "green",
+                  "value": 10
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 8,
+          "x": 0,
+          "y": 1
+        },
+        "id": 105,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "avg(api_rpc_exec_peers{network=\"${Network}\"}  >= 0 )",
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Execution Peers - ${Network}",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percentunit"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 6,
+          "x": 8,
+          "y": 1
+        },
+        "id": 106,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "avg(api_rpc_cons_syncing{network=\"${Network}\"}  >= 0 )",
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Consensus Syncing nodes",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "decimals": 1,
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "unit": "percentunit"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "count(dappmanager_staker_config{executionClient=\"prater\"} == 3)"
+              },
+              "properties": [
+                {
+                  "id": "mappings",
+                  "value": []
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 5,
+          "x": 14,
+          "y": 1
+        },
+        "id": 5,
+        "options": {
+          "legend": {
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "count(dappmanager_staker_config{consensusClient=\"${Network}\"} == 1) / count(dappmanager_staker_config{consensusClient=\"${Network}\"} > 0)",
+            "hide": false,
+            "legendFormat": "Lighthouse",
+            "range": true,
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "count(dappmanager_staker_config{consensusClient=\"${Network}\"} == 2) / count(dappmanager_staker_config{consensusClient=\"${Network}\"} > 0)",
+            "hide": false,
+            "legendFormat": "Nimbus",
+            "range": true,
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "count(dappmanager_staker_config{consensusClient=\"${Network}\"} == 3) / count(dappmanager_staker_config{consensusClient=\"${Network}\"} > 0)",
+            "hide": false,
+            "legendFormat": "Prysm",
+            "range": true,
+            "refId": "E"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "count(dappmanager_staker_config{consensusClient=\"${Network}\"} == 4) / count(dappmanager_staker_config{consensusClient=\"${Network}\"} > 0)",
+            "hide": false,
+            "legendFormat": "Teku",
+            "range": true,
+            "refId": "F"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "count(dappmanager_staker_config{consensusClient=\"${Network}\"} == 5) / count(dappmanager_staker_config{consensusClient=\"${Network}\"} > 0)",
+            "hide": false,
+            "legendFormat": "Lodestar",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Consensus Clients",
+        "type": "piechart"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "decimals": 1,
+            "mappings": [],
+            "max": 100,
+            "min": 0,
+            "unit": "percentunit"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "count(dappmanager_staker_config{executionClient=\"prater\"} == 3)"
+              },
+              "properties": [
+                {
+                  "id": "mappings",
+                  "value": []
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 5,
+          "x": 19,
+          "y": 1
+        },
+        "id": 3,
+        "options": {
+          "legend": {
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "count(dappmanager_staker_config{executionClient=\"${Network}\"} == 1) / count(dappmanager_staker_config{executionClient=\"${Network}\"} > 0)",
+            "hide": false,
+            "legendFormat": "Besu",
+            "range": true,
+            "refId": "C"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "count(dappmanager_staker_config{executionClient=\"${Network}\"} == 2) / count(dappmanager_staker_config{executionClient=\"${Network}\"} > 0)",
+            "hide": false,
+            "legendFormat": "Erigon",
+            "range": true,
+            "refId": "D"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "count(dappmanager_staker_config{executionClient=\"${Network}\"} == 3) / count(dappmanager_staker_config{executionClient=\"${Network}\"} > 0)",
+            "hide": false,
+            "legendFormat": "Geth",
+            "range": true,
+            "refId": "E"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "count(dappmanager_staker_config{executionClient=\"${Network}\"} == 4) / count(dappmanager_staker_config{executionClient=\"${Network}\"} > 0)",
+            "hide": false,
+            "legendFormat": "Nethermind",
+            "range": true,
+            "refId": "F"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "count(dappmanager_staker_config{executionClient=\"${Network}\"} == 5) / count(dappmanager_staker_config{executionClient=\"${Network}\"} > 0)",
+            "hide": false,
+            "legendFormat": "Nethermind",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Execution Clients",
+        "type": "piechart"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "red",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 5
+                },
+                {
+                  "color": "green",
+                  "value": 10
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 8,
+          "x": 0,
+          "y": 5
+        },
+        "id": 104,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "avg(api_rpc_cons_peers{network=\"${Network}\"}  >= 0 )",
+            "instant": false,
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Consensus Peers - ${Network}",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "percentunit"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 4,
+          "w": 6,
+          "x": 8,
+          "y": 5
+        },
+        "id": 107,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "avg(api_rpc_exec_syncing{network=\"${Network}\"}  >= 0 )",
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Execution Syncing nodes",
+        "type": "stat"
+      },
+      {
+        "collapsed": false,
+        "gridPos": {
+          "h": 1,
+          "w": 24,
+          "x": 0,
+          "y": 9
+        },
+        "id": 110,
+        "panels": [],
+        "title": "web3Signer Stats",
+        "type": "row"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 4,
+          "x": 0,
+          "y": 10
+        },
+        "id": 102,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "mean"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "avg(signing_signers_loaded_count{package=\"web3signer-${Network}.dnp.dappnode.eth\"})",
+            "instant": true,
+            "interval": "",
+            "legendFormat": "__auto",
+            "refId": "A"
+          }
+        ],
+        "title": "Loaded Validators x Node - ${Network}",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 4,
+          "x": 4,
+          "y": 10
+        },
+        "id": 103,
+        "options": {
+          "colorMode": "value",
+          "graphMode": "area",
+          "justifyMode": "auto",
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "textMode": "auto"
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "sum(eth2_slashingprotection_prevented_signings{package=\"web3signer-${Network}.dnp.dappnode.eth\"})",
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Total Slashing protections - ${Network}",
+        "type": "stat"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            },
+            "unit": "ms"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 8,
+          "x": 8,
+          "y": 10
+        },
+        "id": 84,
+        "links": [],
+        "options": {
+          "displayMode": "basic",
+          "minVizHeight": 10,
+          "minVizWidth": 0,
+          "orientation": "vertical",
+          "reduceOptions": {
+            "calcs": [
+              "mean"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showUnfilled": true,
+          "valueMode": "color"
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "avg by (quantile)(signing_bls_signing_duration{package=\"web3signer-${Network}.dnp.dappnode.eth\"} >= 0)",
+            "format": "time_series",
+            "instant": true,
+            "interval": "",
+            "intervalFactor": 1,
+            "legendFormat": "{{quantile}}",
+            "refId": "D"
+          }
+        ],
+        "title": "Signing Time - ${Network}",
+        "transformations": [],
+        "type": "bargauge"
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFE396EC0B189D67"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 8,
+          "x": 16,
+          "y": 10
+        },
+        "id": 108,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "PBFE396EC0B189D67"
+            },
+            "editorMode": "code",
+            "expr": "sum(rate(signing_bls_signing_duration_count{package=\"web3signer-${Network}.dnp.dappnode.eth\"}[15m]))",
+            "legendFormat": "Signings x second",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "title": "Signings x second",
+        "type": "timeseries"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 38,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": true,
+            "text": "prater",
+            "value": "prater"
+          },
+          "hide": 0,
+          "includeAll": false,
+          "multi": false,
+          "name": "Network",
+          "options": [
+            {
+              "selected": false,
+              "text": "mainnet",
+              "value": "mainnet"
+            },
+            {
+              "selected": false,
+              "text": "gnosis",
+              "value": "gnosis"
+            },
+            {
+              "selected": false,
+              "text": "lukso",
+              "value": "lukso"
+            },
+            {
+              "selected": true,
+              "text": "prater",
+              "value": "prater"
+            }
+          ],
+          "query": "mainnet, gnosis, lukso, prater",
+          "queryValue": "",
+          "skipUrlSync": false,
+          "type": "custom"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-3h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Staking metrics",
+    "uid": "ea04a09b-95db-4029-8f15-d8e218bc7d87",
+    "version": 6,
+    "weekStart": ""
+  }

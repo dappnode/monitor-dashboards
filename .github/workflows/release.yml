@@ -22,4 +22,5 @@ jobs:
             ethical_dashboard.json
             ethical_dashboard_aggr.json
             monitor_tor.json
+            web3-staker_dashboard.json
           token: ${{ secrets.GITHUB_TOKEN }}
