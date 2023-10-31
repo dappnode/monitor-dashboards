@@ -38,7 +38,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -92,7 +92,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "avg(api_rpc_exec_peers{network=\"${Network}\"}  >= 0 )",
@@ -107,7 +107,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -158,7 +158,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "avg(api_rpc_cons_syncing{network=\"${Network}\"}  >= 0 )",
@@ -173,7 +173,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -239,7 +239,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "count(dappmanager_staker_config{consensusClient=\"${Network}\"} == 1) / count(dappmanager_staker_config{consensusClient=\"${Network}\"} > 0)",
@@ -251,7 +251,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "count(dappmanager_staker_config{consensusClient=\"${Network}\"} == 2) / count(dappmanager_staker_config{consensusClient=\"${Network}\"} > 0)",
@@ -263,7 +263,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "count(dappmanager_staker_config{consensusClient=\"${Network}\"} == 3) / count(dappmanager_staker_config{consensusClient=\"${Network}\"} > 0)",
@@ -275,7 +275,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "count(dappmanager_staker_config{consensusClient=\"${Network}\"} == 4) / count(dappmanager_staker_config{consensusClient=\"${Network}\"} > 0)",
@@ -287,7 +287,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "count(dappmanager_staker_config{consensusClient=\"${Network}\"} == 5) / count(dappmanager_staker_config{consensusClient=\"${Network}\"} > 0)",
@@ -303,7 +303,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -369,7 +369,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "count(dappmanager_staker_config{executionClient=\"${Network}\"} == 1) / count(dappmanager_staker_config{executionClient=\"${Network}\"} > 0)",
@@ -381,7 +381,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "count(dappmanager_staker_config{executionClient=\"${Network}\"} == 2) / count(dappmanager_staker_config{executionClient=\"${Network}\"} > 0)",
@@ -393,7 +393,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "count(dappmanager_staker_config{executionClient=\"${Network}\"} == 3) / count(dappmanager_staker_config{executionClient=\"${Network}\"} > 0)",
@@ -405,7 +405,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "count(dappmanager_staker_config{executionClient=\"${Network}\"} == 4) / count(dappmanager_staker_config{executionClient=\"${Network}\"} > 0)",
@@ -417,7 +417,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "count(dappmanager_staker_config{executionClient=\"${Network}\"} == 5) / count(dappmanager_staker_config{executionClient=\"${Network}\"} > 0)",
@@ -433,7 +433,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -487,7 +487,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -504,7 +504,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -555,7 +555,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "avg(api_rpc_exec_syncing{network=\"${Network}\"}  >= 0 )",
@@ -580,7 +580,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -657,7 +657,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum(signing_signers_loaded_count{package=\"web3signer-${Network}.dnp.dappnode.eth\"})",
@@ -672,7 +672,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -718,7 +718,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum(signing_signers_loaded_count{package=\"web3signer-${Network}.dnp.dappnode.eth\"})",
@@ -733,7 +733,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -783,7 +783,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum(eth2_slashingprotection_prevented_signings{package=\"web3signer-${Network}.dnp.dappnode.eth\"})",
@@ -798,7 +798,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -841,7 +841,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "avg(signing_signers_loaded_count{package=\"web3signer-${Network}.dnp.dappnode.eth\"})",
@@ -857,7 +857,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -908,7 +908,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "avg by (quantile)(signing_bls_signing_duration{package=\"web3signer-${Network}.dnp.dappnode.eth\"} >= 0)",
@@ -927,7 +927,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -1004,7 +1004,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum(rate(signing_bls_signing_duration_count{package=\"web3signer-${Network}.dnp.dappnode.eth\"}[15m]))",
@@ -1033,7 +1033,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -1110,7 +1110,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "sum(signing_signers_loaded_count{package=\"web3signer.dnp.dappnode.eth\"})",
@@ -1125,7 +1125,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -1171,7 +1171,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "sum(signing_signers_loaded_count{package=\"web3signer.dnp.dappnode.eth\"})",
@@ -1186,7 +1186,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -1236,7 +1236,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "sum(eth2_slashingprotection_prevented_signings{package=\"web3signer.dnp.dappnode.eth\"})",
@@ -1251,7 +1251,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -1293,7 +1293,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "avg(signing_signers_loaded_count{package=\"web3signer.dnp.dappnode.eth\"})",
@@ -1309,7 +1309,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "description": "",
           "fieldConfig": {
@@ -1360,7 +1360,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "avg by (quantile)(signing_bls_signing_duration{package=\"web3signer.dnp.dappnode.eth\"} >= 0)",
@@ -1379,7 +1379,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -1456,7 +1456,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "sum(rate(signing_bls_signing_duration_count{package=\"web3signer.dnp.dappnode.eth\"}[15m]))",

@@ -37,7 +37,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -117,7 +117,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "up_percentage",
@@ -132,7 +132,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -183,7 +183,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "cpu_average_by_instance",
@@ -198,7 +198,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -249,7 +249,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum (100 * (1 - (sum(node_memory_MemFree_bytes + node_memory_Buffers_bytes + node_memory_Cached_bytes) by (instance) / sum(node_memory_MemTotal_bytes) by (instance)))) / count(node_memory_MemFree_bytes * 100)",
@@ -264,7 +264,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -312,7 +312,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum(dappmanager_auto_updates_system_packages) / count(dappmanager_auto_updates_system_packages) * 100",
@@ -323,7 +323,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum(dappmanager_auto_updates_user_packages) / count(dappmanager_auto_updates_user_packages) * 100",
@@ -339,7 +339,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -385,7 +385,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "count(count by(instance) (up))",
@@ -400,7 +400,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -448,7 +448,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum(dappmanager_eth_fallback_enabled) / count(dappmanager_eth_fallback_enabled) * 100",
@@ -459,7 +459,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum(dappmanager_eth_client_target_local) / count(dappmanager_eth_client_target_local) * 100",
@@ -475,7 +475,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -523,7 +523,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum(dappmanager_ipfs_client_target_local) / count(dappmanager_ipfs_client_target_local) * 100",
@@ -538,7 +538,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -618,7 +618,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "cpu_average_by_instance",
@@ -633,7 +633,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFE396EC0B189D67"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -713,7 +713,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum (100 * (1 - (sum(node_memory_MemFree_bytes + node_memory_Buffers_bytes + node_memory_Cached_bytes) by (instance) / sum(node_memory_MemTotal_bytes) by (instance)))) / count(node_memory_MemFree_bytes * 100)",
@@ -738,7 +738,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -828,7 +828,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{executionClient=\"prater\"} == 0)) / scalar(count(dappmanager_staker_config{executionClient=\"prater\"})) * 100",
@@ -839,7 +839,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{executionClient=\"prater\"} == 1)) / scalar(count(dappmanager_staker_config{executionClient=\"prater\"})) * 100",
@@ -851,7 +851,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{executionClient=\"prater\"} == 2)) / scalar(count(dappmanager_staker_config{executionClient=\"prater\"})) * 100",
@@ -863,7 +863,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{executionClient=\"prater\"} == 3)) / scalar(count(dappmanager_staker_config{executionClient=\"prater\"})) * 100",
@@ -875,7 +875,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{executionClient=\"prater\"} == 4)) / scalar(count(dappmanager_staker_config{executionClient=\"prater\"})) * 100",
@@ -891,7 +891,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -981,7 +981,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"prater\"} == 0)) / scalar(count(dappmanager_staker_config{consensusClient=\"prater\"})) * 100",
@@ -992,7 +992,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"prater\"} == 1)) / scalar(count(dappmanager_staker_config{consensusClient=\"prater\"})) * 100",
@@ -1004,7 +1004,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"prater\"} == 2)) / scalar(count(dappmanager_staker_config{consensusClient=\"prater\"})) * 100",
@@ -1016,7 +1016,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"prater\"} == 3)) / scalar(count(dappmanager_staker_config{consensusClient=\"prater\"})) * 100",
@@ -1028,7 +1028,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"prater\"} == 4)) / scalar(count(dappmanager_staker_config{consensusClient=\"prater\"})) * 100",
@@ -1044,7 +1044,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -1134,7 +1134,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"} == 0)) / scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"})) * 100",
@@ -1145,7 +1145,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"} == 1)) / scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"})) * 100",
@@ -1157,7 +1157,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"} == 2)) / scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"})) * 100",
@@ -1169,7 +1169,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"} == 3)) / scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"})) * 100",
@@ -1181,7 +1181,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"} == 4)) / scalar(count(dappmanager_staker_config{executionClient=\"mainnet\"})) * 100",
@@ -1197,7 +1197,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -1287,7 +1287,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"mainnet\"} == 0)) / scalar(count(dappmanager_staker_config{consensusClient=\"mainnet\"})) * 100",
@@ -1298,7 +1298,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"mainnet\"} == 1)) / scalar(count(dappmanager_staker_config{consensusClient=\"mainnet\"})) * 100",
@@ -1310,7 +1310,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"mainnet\"} == 2)) / scalar(count(dappmanager_staker_config{consensusClient=\"mainnet\"})) * 100",
@@ -1322,7 +1322,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"mainnet\"} == 3)) / scalar(count(dappmanager_staker_config{consensusClient=\"mainnet\"})) * 100",
@@ -1334,7 +1334,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"prater\"} == 4)) / scalar(count(dappmanager_staker_config{consensusClient=\"prater\"})) * 100",
@@ -1350,7 +1350,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -1440,7 +1440,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"} == 0)) / scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"})) * 100",
@@ -1451,7 +1451,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"} == 1)) / scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"})) * 100",
@@ -1463,7 +1463,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"} == 2)) / scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"})) * 100",
@@ -1475,7 +1475,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"} == 3)) / scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"})) * 100",
@@ -1487,7 +1487,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"} == 4)) / scalar(count(dappmanager_staker_config{executionClient=\"gnosis\"})) * 100",
@@ -1503,7 +1503,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -1593,7 +1593,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"} == 0)) / scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"})) * 100",
@@ -1604,7 +1604,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"} == 1)) / scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"})) * 100",
@@ -1616,7 +1616,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"} == 2)) / scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"})) * 100",
@@ -1628,7 +1628,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"} == 3)) / scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"})) * 100",
@@ -1640,7 +1640,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"} == 4)) / scalar(count(dappmanager_staker_config{consensusClient=\"gnosis\"})) * 100",
@@ -1670,7 +1670,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFE396EC0B189D67"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -1756,7 +1756,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "PBFE396EC0B189D67"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "cpu_usage_total_by_container ",
@@ -2288,7 +2288,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "PBFE396EC0B189D67"
+          "uid": "DS_PROMETHEUS"
         },
         "definition": "container_last_seen{container_label_dappnode_dnp_dnpName!=\"\"}",
         "description": "image",
@@ -2316,7 +2316,7 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "PBFE396EC0B189D67"
+          "uid": "DS_PROMETHEUS"
         },
         "definition": "up",
         "hide": 0,
